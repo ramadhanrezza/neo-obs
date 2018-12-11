@@ -10,6 +10,7 @@ Commands:
     login
     ls
     create
+    update
 
     Run 'obs COMMAND --help' for more information on a command.
 """

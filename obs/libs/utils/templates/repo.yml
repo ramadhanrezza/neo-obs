@@ -51,3 +51,36 @@ cloudian:
         label: S3 Secret Key
         description: Your S3 Secret Key
         required: false
+  permission:
+    description: Admin API to add downloadable S3 object URL
+    parameters:
+      userId:
+        type: string
+        label: User ID
+        description: Cloudian User ID
+      groupId:
+        type: string
+        label: Group ID
+        description: Cloudian Group ID
+        dependences: func:group_list
+      bucketName:
+        type: string
+        label: Bucket Name
+        description: S3 Bucket Name
+      objectName:
+        type: string
+        label: Object Name
+        description: S3 Object Name
+      expiryTime:
+        type: string
+        label: Expiry Time
+        description: URL Expiry Time
+      allowRead:
+        type: string
+        label: Allow Read
+      maxDownloadNum:
+        type: int
+        label: Max Download Number
+      secure:
+        type: string
+        label: allow secure url

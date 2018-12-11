@@ -42,3 +42,27 @@ def do_create(initialize):
     finally:
         pass
         
+
+def do_update(initialize):
+    try:
+        update_data = {}
+        stack = list(initialize.keys())[0]
+        stack_name = list(initialize[stack])[0]
+
+        if stack == 'cloudian':
+            if initialize[stack][stack_name]['template'] == 'user':
+                parameters = initialize[stack][stack_name]['parameters']
+                create_data = user.update(data=None, json=parameters)
+            if initialize[stack][stack_name]['template'] == 'credentials':
+                parameters = initialize[stack][stack_name]['parameters']
+                create_data = credential.update(data=None, json=parameters)
+
+            return create_data
+
+    except Exception as e:
+        log_utils.log_err(e)
+        raise
+    else:
+        pass
+    finally:
+        pass
